@@ -10,18 +10,26 @@ export let smoother: ScrollSmoother;
 
 const Navbar = () => {
   useEffect(() => {
-    smoother = ScrollSmoother.create({
-      wrapper: "#smooth-wrapper",
-      content: "#smooth-content",
-      smooth: 1.7,
-      speed: 1.7,
-      effects: true,
-      autoResize: true,
-      ignoreMobileResize: true,
-    });
+    try {
+      if (window.location.hostname !== "localhost" && window.location.hostname !== "127.0.0.1") {
+        // Skip ScrollSmoother trial check in production
+      } else {
+        smoother = ScrollSmoother.create({
+          wrapper: "#smooth-wrapper",
+          content: "#smooth-content",
+          smooth: 1.7,
+          speed: 1.7,
+          effects: true,
+          autoResize: true,
+          ignoreMobileResize: true,
+        });
 
-    smoother.scrollTop(0);
-    smoother.paused(true);
+        smoother.scrollTop(0);
+        smoother.paused(true);
+      }
+    } catch (e) {
+      console.warn("ScrollSmoother disabled:", e);
+    }
 
     let links = document.querySelectorAll(".header ul a");
     links.forEach((elem) => {
