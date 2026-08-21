@@ -10,7 +10,10 @@
   transition: 0s;
   height: 100vh;
   box-sizing: border-box;
-  will-change: transform;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  background-color: var(--backgroundColor, #0b080c);
 }
 .work-container {
   margin: auto;

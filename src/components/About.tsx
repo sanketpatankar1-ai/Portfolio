@@ -6,9 +6,7 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-          dolores numquam iusto Ratione earum ducimus autem id iure pariatur
-          dolorum quae maiores.
+          B.Tech Computer Science student and Python Developer specializing in building scalable automation, data tools, and AI-driven applications. Passionate about intersecting technology with finance—specifically FinTech systems, financial market data, and algorithmic trading. NISM certified with a strong foundation in market dynamics.
         </p>
       </div>
     </div>
